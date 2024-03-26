@@ -9,6 +9,9 @@ import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
+// import data
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
 
 /* CONFIGURATIONs */
 dotenv.config();
@@ -35,4 +38,6 @@ mongoose.connect(
         useUnifiedTopology: true,
     }).then(() => {
         app.listen(PORT, ()=> console.log(`Database connected to Server Port: ${PORT}`));
+
+        // User.insertMany(dataUser);
     }).catch((error)=> console.log(`${error} did not connect to database`));
