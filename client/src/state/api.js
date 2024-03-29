@@ -6,7 +6,7 @@ export const api = createApi({
     tagTypes: [
       "User",
       "Products",
-    //   "Customers",
+      "Customers",
     //   "Transactions",
     //   "Geography",
     //   "Sales",
@@ -23,10 +23,15 @@ export const api = createApi({
           query: () => `client/products`,
           providesTags: ["Products"],
         }),
+        getCustomers: build.query({
+          query: () => `client/customers`,
+          providesTags: ["Customers"],
+        }),
     }),
 });
 
 export const {
     useGetUserQuery,
     useGetProductsQuery,
+    useGetCustomersQuery,
 } = api;
