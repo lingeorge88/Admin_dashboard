@@ -27,6 +27,7 @@ import {
     AdminPanelSettingsOutlined,
     TrendingUpOutlined,
     PieChartOutlined,
+    TroubleshootOutlined,
   } from "@mui/icons-material";
   import { useEffect, useState } from "react";
   import { useLocation, useNavigate } from "react-router-dom";
@@ -131,6 +132,7 @@ const Sidebar = ({
                 <FlexBetween color={theme.palette.secondary.main}>
                   <Box display="flex" alignItems="center" gap="0.5rem">
                     <Typography variant="h4" fontWeight="bold">
+                      <TroubleshootOutlined sx={{mr: "0.5rem"}}/>
                       TradeSight
                     </Typography>
                   </Box>
