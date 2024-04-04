@@ -44,7 +44,7 @@ export const api = createApi({
           providesTags: ["Sales"],
         }),
         getAdmins: build.query({
-          query: () => `management/sales`,
+          query: () => `management/admins`,
           providesTags: ["Admins"],
         }),
     }),
