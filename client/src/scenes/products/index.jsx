@@ -29,7 +29,7 @@ const Product = ({ _id, name, description, price, rating, category, supply, stat
           <CardContent>
             <Typography
               sx={{ fontSize: 14}}
-              color={theme.palette.secondary[700]}
+              color={theme.palette.secondary[400]}
               gutterBottom
             >
             {category}
