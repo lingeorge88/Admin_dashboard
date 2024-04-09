@@ -91,8 +91,16 @@ const navItems = [
         text: "Performance",
         icon: <TrendingUpOutlined />,
       },    
-]
+];
 
+const pastelColors = [
+  '#64B5F6', // Blue
+  '#81C784', // Green
+  '#BA68C8', // Purple
+  '#E57373', // Red
+  '#FFD180', // Orange
+  '#F48FB1', //  Pink
+];
 const Sidebar = ({
     user,
     drawerWidth,
@@ -131,7 +139,7 @@ const Sidebar = ({
               <Box m="1.5rem 2rem 2rem 3rem">
                 <FlexBetween color={theme.palette.secondary.main}>
                   <Box display="flex" alignItems="center" gap="0.5rem">
-                    <Typography variant="h4" fontWeight="bold">
+                    <Typography variant="h4" fontWeight="bold" > 
                       <TroubleshootOutlined sx={{mr: "0.5rem"}}/>
                       TradeSight
                     </Typography>
@@ -146,6 +154,7 @@ const Sidebar = ({
               <List>
                 {navItems.map(({ text, icon }, index) => {
                   const isLastItem = index === navItems.length - 1;
+                  const itemColor = pastelColors[index % pastelColors.length];
                   if (!icon) {
                     return (
                       <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
@@ -178,10 +187,7 @@ const Sidebar = ({
                         <ListItemIcon
                           sx={{
                             ml: "2rem",
-                            color:
-                              active === lcText
-                                ? theme.palette.primary[600]
-                                : theme.palette.secondary[200],
+                            color: itemColor,
                           }}
                         >
                           {icon}
